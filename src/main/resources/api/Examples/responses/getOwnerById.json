@@ -1,0 +1,25 @@
+{
+    "portalId": 20618354464,
+    "ownerId": 37334993452,
+    "type": "PERSON",
+    "firstName": "abc",
+    "lastName": "def",
+    "email": "abc@test.com",
+    "createdAt": 1680713789902,
+    "updatedAt": 1682340640155,
+    "remoteList": [
+        {
+            "id": 296273000,
+            "portalId": 20618464,
+            "ownerId": 373349952,
+            "remoteId": "50202229",
+            "remoteType": "HUBSPOT",
+            "active": true
+        }
+    ],
+    "hasContactsAccess": false,
+    "activeUserId": 50202229,
+    "userIdIncludingInactive": 50202229,
+    "activeSalesforceId": null,
+    "isActive": true
+}

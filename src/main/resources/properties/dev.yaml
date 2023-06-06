@@ -1,0 +1,32 @@
+env: "dev"
+app:
+  name: "doit-hubspot-sapi-dev"
+  
+api:
+  port: "8081"
+  host: "0.0.0.0"
+#  port: "8083"
+  timeout: "40000"
+  
+method-get: "GET"
+method-post: "POST"
+method-put: "PUT"
+  
+parallel-for-each:
+    max-concurrency: "2" 
+     
+url:
+  contact:
+    recentmodified: "https://api.hubapi.com/contacts/v1/lists/recently_updated/contacts/recent"
+    by-id: "https://api.hubapi.com/contacts/v1/contact/vid/"
+    by-email: "https://api.hubapi.com/contacts/v1/contact/email/"
+    create: "https://api.hubapi.com/contacts/v1/contact"
+    update: "https://api.hubapi.com/contacts/v1/contact/vid/"
+  company:
+    by-id: "https://api.hubapi.com/companies/v2/companies/"
+    by-domain: "https://api.hubapi.com/companies/v2/domains/"
+    create: "https://api.hubapi.com/companies/v2/companies"
+    update: "https://api.hubapi.com/companies/v2/companies/"
+  owner:
+    by-id: "http://api.hubapi.com/owners/v2/owners/" 
+    byemail: "http://api.hubapi.com/owners/v2/owners?email="

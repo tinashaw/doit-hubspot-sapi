@@ -23,6 +23,7 @@ url:
     create: "https://api.hubapi.com/contacts/v1/contact"
     update: "https://api.hubapi.com/contacts/v1/contact/vid/"
   company:
+    recentmodified: "https://api.hubapi.com/companies/v2/companies/recent/modified"
     by-id: "https://api.hubapi.com/companies/v2/companies/"
     by-domain: "https://api.hubapi.com/companies/v2/domains/"
     create: "https://api.hubapi.com/companies/v2/companies"

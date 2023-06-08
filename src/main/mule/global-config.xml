@@ -9,8 +9,6 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/secure-properties http://www.mulesoft.org/schema/mule/secure-properties/current/mule-secure-properties.xsd">
 	<configuration-properties doc:name="Configuration properties" doc:id="f3277de6-c802-4b33-b207-b84d49882ddc" file="properties/${mule.env}.yaml" />
-	<global-property doc:name="Global Property" doc:id="39d3b60f-736f-4319-8ae0-0ba066dd0716" name="mule.env" value="dev" />
-	<global-property doc:name="Global Property" doc:id="4f4dbab5-42b8-4bb5-932f-b79ba7917441" name="mule.key" value="DoiT123" />
 	<secure-properties:config name="Secure_Properties_Config" doc:name="Secure Properties Config" doc:id="0f2b974c-5911-4769-8f47-c8ebbcfb3948" file="properties/${mule.env}-secure.yaml" key="${mule.key}" >
 		<secure-properties:encrypt algorithm="Blowfish" />
 	</secure-properties:config>

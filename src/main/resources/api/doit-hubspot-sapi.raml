@@ -180,6 +180,31 @@ traits:
             application/json:
               example:
 
+  /recentmodified:
+    get:
+      is: [errorResponse]
+      description: 
+      displayName: 
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+
+  /aggregated:
+    post:
+      is: [errorResponse]
+      description: get aggregated company by companyId
+      displayName: Get companies
+      body:
+        application/json:
+          type: array
+          example: [123,345]
+      responses:
+        200:
+          body:
+            application/json:
+              example:
   /domain:
     post:
       is: [errorResponse]

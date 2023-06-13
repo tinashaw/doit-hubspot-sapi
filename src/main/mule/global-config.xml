@@ -12,6 +12,8 @@ http://www.mulesoft.org/schema/mule/secure-properties http://www.mulesoft.org/sc
 	<secure-properties:config name="Secure_Properties_Config" doc:name="Secure Properties Config" doc:id="0f2b974c-5911-4769-8f47-c8ebbcfb3948" file="properties/${mule.env}-secure.yaml" key="${mule.key}" >
 		<secure-properties:encrypt algorithm="Blowfish" />
 	</secure-properties:config>
+	<global-property doc:name="Global Property" doc:id="73501f10-5ce9-4f89-8e1f-6e22dd772517" name="mule.env" value="dev" />
+	<global-property doc:name="Global Property" doc:id="c60fe90a-b6ed-4e97-88ba-f93f173537ca" name="mule.key" value="DoiT123" />
 	<error-handler name="global-error-handler" doc:id="805b71fe-bd55-4974-9d4d-b42ba5cfb663" >
 		<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="737fcc3c-d901-4725-bcb2-d4e816e09139" type="APIKIT:BAD_REQUEST" >
 			<set-variable value="#[400]" doc:name="Set the HTTP Status - 40" doc:id="e19d70d4-3528-4cf7-af59-749b42eb4a4c" variableName="httpStatus" />

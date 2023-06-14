@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mule xmlns:secure-properties="http://www.mulesoft.org/schema/mule/secure-properties"
+<mule xmlns:apikit="http://www.mulesoft.org/schema/mule/mule-apikit"
+	xmlns:secure-properties="http://www.mulesoft.org/schema/mule/secure-properties"
 	xmlns:http="http://www.mulesoft.org/schema/mule/http"
 	xmlns:ee="http://www.mulesoft.org/schema/mule/ee/core" xmlns="http://www.mulesoft.org/schema/mule/core"
 	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="
+http://www.mulesoft.org/schema/mule/mule-apikit http://www.mulesoft.org/schema/mule/mule-apikit/current/mule-apikit.xsd 
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd 
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/secure-properties http://www.mulesoft.org/schema/mule/secure-properties/current/mule-secure-properties.xsd">
@@ -14,6 +16,11 @@ http://www.mulesoft.org/schema/mule/secure-properties http://www.mulesoft.org/sc
 	</secure-properties:config>
 	<global-property doc:name="Global Property" doc:id="73501f10-5ce9-4f89-8e1f-6e22dd772517" name="mule.env" value="dev" />
 	<global-property doc:name="Global Property" doc:id="c60fe90a-b6ed-4e97-88ba-f93f173537ca" name="mule.key" value="DoiT123" />
+	<configuration doc:name="Configuration" doc:id="ade4a0d8-e2ac-40a0-8e32-7e887b0fd9a9" defaultErrorHandler-ref="global-error-handler" />
+	<http:listener-config name="doit-hubspot-sapi-httpListenerConfig">
+        <http:listener-connection host="${api.host}" port="${api.port}" readTimeout="${api.timeout}" />
+    </http:listener-config>
+    <apikit:config name="doit-hubspot-sapi-config" api="doit-hubspot-sapi.raml" outboundHeadersMapName="outboundHeaders" httpStatusVarName="httpStatus" />
 	<error-handler name="global-error-handler" doc:id="805b71fe-bd55-4974-9d4d-b42ba5cfb663" >
 		<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="737fcc3c-d901-4725-bcb2-d4e816e09139" type="APIKIT:BAD_REQUEST" >
 			<set-variable value="#[400]" doc:name="Set the HTTP Status - 40" doc:id="e19d70d4-3528-4cf7-af59-749b42eb4a4c" variableName="httpStatus" />
@@ -122,6 +129,6 @@ http://www.mulesoft.org/schema/mule/secure-properties http://www.mulesoft.org/sc
 	</error-handler>
 	<sub-flow name="global-exception-response-sub-flow" doc:id="e791deb0-237d-46b8-ad5e-89fd6ca67a17" >
 		<set-payload value='#[%dw 2.0&#10;output application/json&#10;---&#10;{&#10;    "transactionId": correlationId,&#10;    "logLevel": "ERROR",&#10;    "errorCode": error.errorMessage.attributes.StatusCode default 500,&#10;    "errorTypes": error.errorType.namespace,&#10;    "process": app.name,&#10;    "Component": if(error.failingComponent != null) error.failingComponent else null,&#10;    "timestamp": now(),&#10;    "exception":  error.description,&#10;    "message": error.muleMessage.typedValue.message&#10;}]' doc:name="Final Error Response" doc:id="1c3e1275-065f-49c6-b7e2-8df86dcdb3f5" />
-		<logger level="INFO" doc:name="Logger" doc:id="780a903b-6f34-4e8e-876a-0a1708a9fcee" message="#[payload]" />
+		<logger level="ERROR" doc:name="Log error message" doc:id="780a903b-6f34-4e8e-876a-0a1708a9fcee" message="#[payload]" />
 	</sub-flow>
 </mule>

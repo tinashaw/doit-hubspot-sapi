@@ -34,3 +34,5 @@ url:
   owner:
     by-id: "http://api.hubapi.com/owners/v2/owners/" 
     byemail: "http://api.hubapi.com/owners/v2/owners?email="
+  form:
+    submissions: "https://api.hubapi.com/form-integrations/v1/submissions/forms/"     

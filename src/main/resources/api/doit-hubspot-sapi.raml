@@ -289,6 +289,18 @@ traits:
           body:
             application/json:
               example:              
+/form:
+  /submissions:
+    /{formId}:
+      get:
+        is: [errorResponse]
+        description: get all form submissions by form-Id
+        displayName: Get Form-Submissions
+        responses:
+          200:
+            body:
+              application/json:
+                example:
 
                   
         

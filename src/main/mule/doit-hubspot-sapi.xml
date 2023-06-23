@@ -17,10 +17,10 @@
         <logger level="INFO" doc:name="Log Started" doc:id="dbff76ff-2eb6-43c5-aa0e-89f2429d110a" message="#[%dw 2.0&#xA;output application/json&#xA;---&#xA;{&#xA;  env : Mule::p('env'),&#xA;  transactionId : correlationId,&#xA;  applicationName : Mule::p('app.name'),&#xA;  flowName : &quot;get Owner by email flow&quot;,&#xA;  status: &quot;Started&quot;,&#xA;  timestamp : now()&#xA;}]" />
         <ee:transform doc:id="e1d2271b-3abe-4813-a724-06225ea4660c" doc:name="parameters">
             <ee:message>
-				<ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
+                <ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
             </ee:message>
             <ee:variables>
-				<ee:set-variable resource="dwl/var-owner-by-email.dwl" variableName="parameters" />
+                <ee:set-variable resource="dwl/var-owner-by-email.dwl" variableName="parameters" />
             </ee:variables>
         </ee:transform>
         <flow-ref doc:name="Flow Ref to common hubspot request flow" doc:id="382ce5bf-ac42-44c5-ac34-14bb89ea6518" name="common-hubspot-request-flow" />
@@ -30,10 +30,10 @@
         <logger level="INFO" doc:name="Log Started" doc:id="e32c8368-aa0d-4fcd-b9ed-f9d490852695" message="#[%dw 2.0&#xA;output application/json&#xA;---&#xA;{&#xA;  env : Mule::p('env'),&#xA;  transactionId : correlationId,&#xA;  applicationName : Mule::p('app.name'),&#xA;  flowName : &quot;get Owner by id flow&quot;,&#xA;  status: &quot;Started&quot;,&#xA;  timestamp : now()&#xA;}]" />
         <ee:transform doc:id="f4d30c15-9f01-4372-aa4b-9d8d6fc57907" doc:name="parameters">
             <ee:message>
-				<ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
+                <ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
             </ee:message>
             <ee:variables>
-				<ee:set-variable resource="dwl/var-owner-by-id.dwl" variableName="parameters" />
+                <ee:set-variable resource="dwl/var-owner-by-id.dwl" variableName="parameters" />
             </ee:variables>
         </ee:transform>
         <flow-ref doc:name="Flow Ref to common hubspot request flow" doc:id="0351d605-0401-4d66-9c9c-15e80237ee19" name="common-hubspot-request-flow" />
@@ -43,10 +43,10 @@
         <logger level="INFO" doc:name="Log Started" doc:id="36d8cde8-81c4-4ea2-97f5-d57c34b48124" message="#[%dw 2.0&#xA;output application/json&#xA;---&#xA;{&#xA;  env : Mule::p('env'),&#xA;  transactionId : correlationId,&#xA;  applicationName : Mule::p('app.name'),&#xA;  flowName : &quot;get Recentmodified contact flow&quot;,&#xA;  status: &quot;Started&quot;,&#xA;  timestamp : now()&#xA;}]" />
         <ee:transform doc:id="63451e4d-0e0e-4980-8a6d-8244cc0e00dd" doc:name="parameters">
             <ee:message>
-				<ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
+                <ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
             </ee:message>
             <ee:variables>
-				<ee:set-variable resource="dwl/var-recentmodified-contacts.dwl" variableName="parameters" />
+                <ee:set-variable resource="dwl/var-recentmodified-contacts.dwl" variableName="parameters" />
             </ee:variables>
         </ee:transform>
         <flow-ref doc:name="Flow Ref to common hubspot request flow" doc:id="02832c02-f196-460a-b88a-a7ba3416501e" name="common-hubspot-request-flow" />
@@ -56,11 +56,11 @@
         <logger level="INFO" doc:name="Log Started" doc:id="75a6d716-dee9-42db-a0ff-7ff6ff1c8729" message="#[%dw 2.0&#xA;output application/json&#xA;---&#xA;{&#xA;  env : Mule::p('env'),&#xA;  transactionId : correlationId,&#xA;  applicationName : Mule::p('app.name'),&#xA;  flowName : &quot;get Company by companyId flow&quot;,&#xA;  status: &quot;Started&quot;,&#xA;  timestamp : now()&#xA;}]" />
         <ee:transform doc:name="parameters">
             <ee:message>
-				<ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
+                <ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
             </ee:message>
             <ee:variables>
                 <ee:set-variable variableName="companyid"><![CDATA[attributes.uriParams.'companyid']]></ee:set-variable>
-				<ee:set-variable resource="dwl/var-company-by-company-id.dwl" variableName="parameters" />
+                <ee:set-variable resource="dwl/var-company-by-company-id.dwl" variableName="parameters" />
             </ee:variables>
         </ee:transform>
         <flow-ref doc:name="Flow Ref to common hubspot request flow" doc:id="21c7ce1d-c9d3-4fa1-9656-20092feae5d6" name="common-hubspot-request-flow" />
@@ -69,11 +69,11 @@
     <flow name="get:\deal\(dealId):doit-hubspot-sapi-config">
         <ee:transform doc:name="parameters">
             <ee:message>
-				<ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
+                <ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
             </ee:message>
             <ee:variables>
                 <ee:set-variable variableName="dealId"><![CDATA[attributes.uriParams.'dealId']]></ee:set-variable>
-				<ee:set-variable resource="dwl/var-deal-by-deal-id.dwl" variableName="parameters" />
+                <ee:set-variable resource="dwl/var-deal-by-deal-id.dwl" variableName="parameters" />
             </ee:variables>
         </ee:transform>
     </flow>
@@ -81,11 +81,11 @@
         <logger level="INFO" doc:name="Log Started" doc:id="51ecfd1b-0bc1-4e6c-bf30-f5c7dbab20c7" message="#[%dw 2.0&#xA;output application/json&#xA;---&#xA;{&#xA;  env : Mule::p('env'),&#xA;  transactionId : correlationId,&#xA;  applicationName : Mule::p('app.name'),&#xA;  flowName : &quot;get Contact by vid flow&quot;,&#xA;  status: &quot;Started&quot;,&#xA;  timestamp : now()&#xA;}]" />
         <ee:transform doc:name="parameters">
             <ee:message>
-				<ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
+                <ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
             </ee:message>
             <ee:variables>
                 <ee:set-variable variableName="vid"><![CDATA[attributes.uriParams.'vid']]></ee:set-variable>
-				<ee:set-variable resource="dwl/var-contact-by-vid.dwl" variableName="parameters" />
+                <ee:set-variable resource="dwl/var-contact-by-vid.dwl" variableName="parameters" />
             </ee:variables>
         </ee:transform>
         <flow-ref doc:name="Flow Ref to common hubspot request flow" doc:id="baf4ace3-758e-415b-98c5-45844760ae8c" name="common-hubspot-request-flow" />
@@ -95,10 +95,10 @@
         <logger level="INFO" doc:name="Log Started" doc:id="781eb886-6c95-4384-aa8a-6e3f1c84ad38" message="#[%dw 2.0&#xA;output application/json&#xA;---&#xA;{&#xA;  env : Mule::p('env'),&#xA;  transactionId : correlationId,&#xA;  applicationName : Mule::p('app.name'),&#xA;  flowName : &quot;Create Deal flow&quot;,&#xA;  status: &quot;Started&quot;,&#xA;  timestamp : now()&#xA;}]" />
         <ee:transform doc:id="efbbbc07-69f5-419c-8ce0-d36ed4cdd155" doc:name="parameters">
             <ee:message>
-				<ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
+                <ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
             </ee:message>
             <ee:variables>
-				<ee:set-variable resource="dwl/var-create-deal.dwl" variableName="parameters" />
+                <ee:set-variable resource="dwl/var-create-deal.dwl" variableName="parameters" />
             </ee:variables>
         </ee:transform>
         <flow-ref doc:name="Flow Ref to common hubspot request flow" doc:id="746320b5-020c-4e7d-ba5a-5a3bab52968a" name="common-hubspot-request-flow" />
@@ -108,10 +108,10 @@
         <logger level="INFO" doc:name="Log Started" doc:id="f28be8d7-e2ed-4344-b407-8c8f3fb83091" message="#[%dw 2.0&#xA;output application/json&#xA;---&#xA;{&#xA;  env : Mule::p('env'),&#xA;  transactionId : correlationId,&#xA;  applicationName : Mule::p('app.name'),&#xA;  flowName : &quot;Create Contact flow&quot;,&#xA;  status: &quot;Started&quot;,&#xA;  timestamp : now()&#xA;}]" />
         <ee:transform doc:id="3ad9b13d-6ef5-4ccf-8db7-41cc69e1b71e" doc:name="parameters">
             <ee:message>
-				<ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
+                <ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
             </ee:message>
             <ee:variables>
-				<ee:set-variable resource="dwl/var-create-contact.dwl" variableName="parameters" />
+                <ee:set-variable resource="dwl/var-create-contact.dwl" variableName="parameters" />
             </ee:variables>
         </ee:transform>
         <flow-ref doc:name="Flow Ref to common hubspot request flow" doc:id="02b13ad9-93f2-45b0-9b0e-71f9df78de2a" name="common-hubspot-request-flow" />
@@ -121,10 +121,10 @@
         <logger level="INFO" doc:name="Log Started" doc:id="b34c91d6-bcc8-4680-869a-87cca2af42fc" message="#[%dw 2.0&#xA;output application/json&#xA;---&#xA;{&#xA;  env : Mule::p('env'),&#xA;  transactionId : correlationId,&#xA;  applicationName : Mule::p('app.name'),&#xA;  flowName : &quot;Create Company flow&quot;,&#xA;  status: &quot;Started&quot;,&#xA;  timestamp : now()&#xA;}]" />
         <ee:transform doc:id="7235035a-ee64-4381-8fed-0d71191a1d98" doc:name="parameters">
             <ee:message>
-				<ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
+                <ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
             </ee:message>
             <ee:variables>
-				<ee:set-variable resource="dwl/var-create-company.dwl" variableName="parameters" />
+                <ee:set-variable resource="dwl/var-create-company.dwl" variableName="parameters" />
             </ee:variables>
         </ee:transform>
         <flow-ref doc:name="Flow Ref to common hubspot request flow" doc:id="bb4a4307-1cca-447e-a807-6c65e2cc7188" name="common-hubspot-request-flow" />
@@ -134,10 +134,10 @@
         <logger level="INFO" doc:name="Log Started" doc:id="14420b77-feff-4b69-a0b2-de914e52fd71" message="#[%dw 2.0&#xA;output application/json&#xA;---&#xA;{&#xA;  env : Mule::p('env'),&#xA;  transactionId : correlationId,&#xA;  applicationName : Mule::p('app.name'),&#xA;  flowName : &quot;Update contact flow&quot;,&#xA;  status: &quot;Started&quot;,&#xA;  timestamp : now()&#xA;}]" />
         <ee:transform doc:id="9f72dd0a-fe2f-4ac6-abf5-0419c1e01537" doc:name="parameters">
             <ee:message>
-				<ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
+                <ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
             </ee:message>
             <ee:variables>
-				<ee:set-variable resource="dwl/var-update-contact.dwl" variableName="parameters" />
+                <ee:set-variable resource="dwl/var-update-contact.dwl" variableName="parameters" />
             </ee:variables>
         </ee:transform>
         <flow-ref doc:name="Flow Ref to common hubspot request flow" doc:id="8f662eba-0475-4ece-8958-08d5469cd265" name="common-hubspot-request-flow" />
@@ -147,10 +147,10 @@
         <logger level="INFO" doc:name="Log Started" doc:id="c9792868-216d-46b5-aabe-6304a4831ed4" message="#[%dw 2.0&#xA;output application/json&#xA;---&#xA;{&#xA;  env : Mule::p('env'),&#xA;  transactionId : correlationId,&#xA;  applicationName : Mule::p('app.name'),&#xA;  flowName : &quot;Update company flow&quot;,&#xA;  status: &quot;Started&quot;,&#xA;  timestamp : now()&#xA;}]" />
         <ee:transform doc:id="936edc54-3b2e-4c31-a82d-f2e7cc3b4d2c" doc:name="parameters">
             <ee:message>
-				<ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
+                <ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
             </ee:message>
             <ee:variables>
-				<ee:set-variable resource="dwl/var-update-company.dwl" variableName="parameters" />
+                <ee:set-variable resource="dwl/var-update-company.dwl" variableName="parameters" />
             </ee:variables>
         </ee:transform>
         <flow-ref doc:name="Flow Ref to common hubspot request flow" doc:id="279a94b8-e4f5-409f-ae71-3c09176bc74c" name="common-hubspot-request-flow" />
@@ -160,11 +160,11 @@
         <logger level="INFO" doc:name="Log Started" doc:id="baf976ac-41e7-4adc-b88d-1acb42688d1c" message="#[%dw 2.0&#xA;output application/json&#xA;---&#xA;{&#xA;  env : Mule::p('env'),&#xA;  transactionId : correlationId,&#xA;  applicationName : Mule::p('app.name'),&#xA;  flowName : &quot;Get contact by email flow&quot;,&#xA;  status: &quot;Started&quot;,&#xA;  timestamp : now()&#xA;}]" />
         <ee:transform doc:name="parameters">
             <ee:message>
-				<ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
+                <ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
             </ee:message>
             <ee:variables>
                 <ee:set-variable variableName="email"><![CDATA[attributes.uriParams.'email']]></ee:set-variable>
-				<ee:set-variable resource="dwl/var-contact-by-email.dwl" variableName="parameters" />
+                <ee:set-variable resource="dwl/var-contact-by-email.dwl" variableName="parameters" />
             </ee:variables>
         </ee:transform>
         <flow-ref doc:name="Flow Ref to common hubspot request flow" doc:id="48aaacd7-7102-4c6b-a9b1-31f0bc960b7b" name="common-hubspot-request-flow" />
@@ -174,10 +174,10 @@
         <logger level="INFO" doc:name="Log Started" doc:id="6f681a13-4903-4d9e-929f-b971ba600c99" message="#[%dw 2.0&#xA;output application/json&#xA;---&#xA;{&#xA;  env : Mule::p('env'),&#xA;  transactionId : correlationId,&#xA;  applicationName : Mule::p('app.name'),&#xA;  flowName : &quot;Update deal by dealId&quot;,&#xA;  status: &quot;Started&quot;,&#xA;  timestamp : now()&#xA;}]" />
         <ee:transform doc:id="efc2e9a9-f865-48da-a99f-268908f985d3">
             <ee:message>
-				<ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
+                <ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
             </ee:message>
             <ee:variables>
-				<ee:set-variable resource="dwl/var-update-deal.dwl" variableName="parameters" />
+                <ee:set-variable resource="dwl/var-update-deal.dwl" variableName="parameters" />
             </ee:variables>
         </ee:transform>
         <flow-ref doc:name="Flow Ref to common hubspot request flow" doc:id="90bb7bea-fd16-44d9-bff7-f30622098fb1" name="common-hubspot-request-flow" />
@@ -187,10 +187,10 @@
         <logger level="INFO" doc:name="Log Started" doc:id="c3ae6c26-fcf2-4a03-a074-2b70950679e5" message="#[%dw 2.0&#xA;output application/json&#xA;---&#xA;{&#xA;  env : Mule::p('env'),&#xA;  transactionId : correlationId,&#xA;  applicationName : Mule::p('app.name'),&#xA;  flowName : &quot;get company by domain flow&quot;,&#xA;  status: &quot;Started&quot;,&#xA;  timestamp : now()&#xA;}]" />
         <ee:transform doc:id="d8d5e122-4aa7-4f7e-91ce-b2423aa6542c" doc:name="parameters">
             <ee:message>
-				<ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
+                <ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
             </ee:message>
             <ee:variables>
-				<ee:set-variable resource="dwl/var-company-by-domain.dwl" variableName="parameters" />
+                <ee:set-variable resource="dwl/var-company-by-domain.dwl" variableName="parameters" />
             </ee:variables>
         </ee:transform>
         <flow-ref doc:name="Flow Ref to common hubspot request flow" doc:id="fe9ee9f5-9fcb-480d-9744-f961ccbfc641" name="common-hubspot-request-flow" />
@@ -200,21 +200,21 @@
         <logger level="INFO" doc:name="Log Started" doc:id="786d2763-18b3-4dae-b1a3-c3fdd9a2167d" message="#[%dw 2.0&#xA;output application/json&#xA;---&#xA;{&#xA;  env : Mule::p('env'),&#xA;  transactionId : correlationId,&#xA;  applicationName : Mule::p('app.name'),&#xA;  flowName : &quot;get aggregated contact flow&quot;,&#xA;  status: &quot;Started&quot;,&#xA;  timestamp : now()&#xA;}]" />
         <ee:transform doc:name="Inbound payload" doc:id="cd0c2aa7-2227-423c-a151-20227efe042c">
             <ee:message>
-				<ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
+                <ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
             </ee:message>
         </ee:transform>
         <parallel-foreach doc:name="Parallel For Each contactId" doc:id="0eadd17c-a9af-4933-aa25-07d413c87e85" maxConcurrency="${parallel-for-each.max-concurrency}">
             <ee:transform doc:id="e0f38d49-23eb-4a47-8d0e-ddc4b4488e56" doc:name="parameters">
                 <ee:message />
                 <ee:variables>
-					<ee:set-variable resource="dwl/var-get-aggregated-contacts.dwl" variableName="parameters" />
+                    <ee:set-variable resource="dwl/var-get-aggregated-contacts.dwl" variableName="parameters" />
                 </ee:variables>
             </ee:transform>
             <flow-ref doc:name="Flow Ref to common hubspot request flow" doc:id="8c6a5d32-d489-4c4d-881f-c18547ead7ed" name="common-hubspot-request-flow" />
         </parallel-foreach>
         <ee:transform doc:name="Set Response Payload" doc:id="642a0e49-1ede-4c49-8a74-6a0132055e44">
             <ee:message>
-				<ee:set-payload resource="dwl/msg-response-payload.dwl" />
+                <ee:set-payload resource="dwl/msg-response-payload.dwl" />
             </ee:message>
         </ee:transform>
         <logger level="INFO" doc:name="Log Completed" doc:id="ef57236b-1322-40bf-bb59-64f91eaeec87" message="#[%dw 2.0&#xA;output application/json&#xA;---&#xA;{&#xA;  env : Mule::p('env'),&#xA;  transactionId : correlationId,&#xA;  applicationName : Mule::p('app.name'),&#xA;  flowName : &quot;get aggregated contact flow&quot;,&#xA;  status: &quot;Completed&quot;,&#xA;  timestamp : now()&#xA;}]" />
@@ -223,10 +223,10 @@
         <logger level="INFO" doc:name="Log Started" doc:id="fc5aeeb7-c07a-4597-ab48-5764a8dda4f4" message="#[%dw 2.0&#xA;output application/json&#xA;---&#xA;{&#xA;  env : Mule::p('env'),&#xA;  transactionId : correlationId,&#xA;  applicationName : Mule::p('app.name'),&#xA;  flowName : &quot;get Recentmodified company flow&quot;,&#xA;  status: &quot;Started&quot;,&#xA;  timestamp : now()&#xA;}]" />
         <ee:transform doc:name="parameters" doc:id="9c8b10de-1005-4286-a8b3-1fe7b95cf052">
             <ee:message>
-				<ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
+                <ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
             </ee:message>
             <ee:variables>
-				<ee:set-variable resource="dwl/var-recentmodified-companies.dwl" variableName="parameters" />
+                <ee:set-variable resource="dwl/var-recentmodified-companies.dwl" variableName="parameters" />
             </ee:variables>
         </ee:transform>
         <flow-ref doc:name="Flow Ref to common hubspot request flow" doc:id="8a4b29c1-2f76-4cc7-a851-b0a445d17e0b" name="common-hubspot-request-flow" />
@@ -236,49 +236,63 @@
         <logger level="INFO" doc:name="Log Started" doc:id="68d6d559-7ab9-46c7-9bdb-e405d5e0a310" message="#[%dw 2.0&#xA;output application/json&#xA;---&#xA;{&#xA;  env : Mule::p('env'),&#xA;  transactionId : correlationId,&#xA;  applicationName : Mule::p('app.name'),&#xA;  flowName : &quot;get aggregated company flow&quot;,&#xA;  status: &quot;Started&quot;,&#xA;  timestamp : now()&#xA;}]" />
         <ee:transform doc:name="Inbound payload" doc:id="44baccea-a07b-44ca-aa2f-0d671d3643de">
             <ee:message>
-				<ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
+                <ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
             </ee:message>
         </ee:transform>
         <parallel-foreach doc:name="Parallel For Each companyId" doc:id="732139f6-1d72-4417-91ae-0a09c64634ec" maxConcurrency="${parallel-for-each.max-concurrency}">
             <ee:transform doc:name="parameters" doc:id="7d7dbd65-4c8e-4421-81b4-c5821595957f">
                 <ee:message />
                 <ee:variables>
-					<ee:set-variable resource="dwl/var-get-aggregated-companies.dwl" variableName="parameters" />
+                    <ee:set-variable resource="dwl/var-get-aggregated-companies.dwl" variableName="parameters" />
                 </ee:variables>
             </ee:transform>
             <flow-ref doc:name="Flow Ref to common hubspot request flow" doc:id="812a8cfb-7d8d-43f6-83e2-2c049910c50c" name="common-hubspot-request-flow" />
         </parallel-foreach>
         <ee:transform doc:name="Set Response Payload" doc:id="b0ce19a9-c280-4356-9896-07c8fc3a6181">
             <ee:message>
-				<ee:set-payload resource="dwl/msg-response-payload.dwl" />
+                <ee:set-payload resource="dwl/msg-response-payload.dwl" />
             </ee:message>
         </ee:transform>
         <logger level="INFO" doc:name="Log Completed" doc:id="2c3acc45-8c90-49de-ab92-6fe9708f1f2b" message="#[%dw 2.0&#xA;output application/json&#xA;---&#xA;{&#xA;  env : Mule::p('env'),&#xA;  transactionId : correlationId,&#xA;  applicationName : Mule::p('app.name'),&#xA;  flowName : &quot;get aggregated company flow&quot;,&#xA;  status: &quot;Completed&quot;,&#xA;  timestamp : now()&#xA;}]" />
     </flow>
     <flow name="put:\deal\associate:application\json:doit-hubspot-sapi-config">
-		<logger level="INFO" doc:name="Log Started" doc:id="d28608b5-5269-4e25-9cf2-9d5d613392ca" message="#[%dw 2.0&#10;output application/json&#10;---&#10;{&#10;  env : Mule::p('env'),&#10;  transactionId : correlationId,&#10;  applicationName : Mule::p('app.name'),&#10;  flowName : &quot;deal associate flow&quot;,&#10;  status: &quot;Started&quot;,&#10;  timestamp : now()&#10;}]" />
-		<ee:transform doc:name="parameters" doc:id="9c80908b-b26f-4e48-b7e9-f24d5e5f5171" >
-			<ee:message >
-				<ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
-			</ee:message>
-			<ee:variables >
-				<ee:set-variable resource="dwl/var-associate-deal.dwl" variableName="parameters" />
-			</ee:variables>
-		</ee:transform>
-		<flow-ref doc:name="Flow Ref to common hubspot request flow" doc:id="7b1e2c65-47a6-4fda-a4f0-e8fa64c998d7" name="common-hubspot-request-flow" />
-		<logger level="INFO" doc:name="Log Completed" doc:id="628ee356-37a8-4749-9dc4-b53a89c24d56" message="#[%dw 2.0&#10;output application/json&#10;---&#10;{&#10;  env : Mule::p('env'),&#10;  transactionId : correlationId,&#10;  applicationName : Mule::p('app.name'),&#10;  flowName : &quot;deal associate flow&quot;,&#10;  status: &quot;Completed&quot;,&#10;  timestamp : now()&#10;}]" />
+        <logger level="INFO" doc:name="Log Started" doc:id="d28608b5-5269-4e25-9cf2-9d5d613392ca" message="#[%dw 2.0&#xA;output application/json&#xA;---&#xA;{&#xA;  env : Mule::p('env'),&#xA;  transactionId : correlationId,&#xA;  applicationName : Mule::p('app.name'),&#xA;  flowName : &quot;deal associate flow&quot;,&#xA;  status: &quot;Started&quot;,&#xA;  timestamp : now()&#xA;}]" />
+        <ee:transform doc:name="parameters" doc:id="9c80908b-b26f-4e48-b7e9-f24d5e5f5171">
+            <ee:message>
+                <ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
+            </ee:message>
+            <ee:variables>
+                <ee:set-variable resource="dwl/var-associate-deal.dwl" variableName="parameters" />
+            </ee:variables>
+        </ee:transform>
+        <flow-ref doc:name="Flow Ref to common hubspot request flow" doc:id="7b1e2c65-47a6-4fda-a4f0-e8fa64c998d7" name="common-hubspot-request-flow" />
+        <logger level="INFO" doc:name="Log Completed" doc:id="628ee356-37a8-4749-9dc4-b53a89c24d56" message="#[%dw 2.0&#xA;output application/json&#xA;---&#xA;{&#xA;  env : Mule::p('env'),&#xA;  transactionId : correlationId,&#xA;  applicationName : Mule::p('app.name'),&#xA;  flowName : &quot;deal associate flow&quot;,&#xA;  status: &quot;Completed&quot;,&#xA;  timestamp : now()&#xA;}]" />
     </flow>
     <flow name="put:\deal\deassociate:application\json:doit-hubspot-sapi-config">
-		<logger level="INFO" doc:name="Log Started" doc:id="9382e420-6e2d-42bb-bc34-6bd2f15b9eb7" message="#[%dw 2.0&#10;output application/json&#10;---&#10;{&#10;  env : Mule::p('env'),&#10;  transactionId : correlationId,&#10;  applicationName : Mule::p('app.name'),&#10;  flowName : &quot;deal deassociate flow&quot;,&#10;  status: &quot;Started&quot;,&#10;  timestamp : now()&#10;}]" />
-		<ee:transform doc:name="parameters" doc:id="de8f6b81-a356-460f-ae14-3d093bca1484" >
+        <logger level="INFO" doc:name="Log Started" doc:id="9382e420-6e2d-42bb-bc34-6bd2f15b9eb7" message="#[%dw 2.0&#xA;output application/json&#xA;---&#xA;{&#xA;  env : Mule::p('env'),&#xA;  transactionId : correlationId,&#xA;  applicationName : Mule::p('app.name'),&#xA;  flowName : &quot;deal deassociate flow&quot;,&#xA;  status: &quot;Started&quot;,&#xA;  timestamp : now()&#xA;}]" />
+        <ee:transform doc:name="parameters" doc:id="de8f6b81-a356-460f-ae14-3d093bca1484">
+            <ee:message>
+                <ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
+            </ee:message>
+            <ee:variables>
+                <ee:set-variable resource="dwl/var-deassociate-deal.dwl" variableName="parameters" />
+            </ee:variables>
+        </ee:transform>
+        <flow-ref doc:name="Flow Ref to common hubspot request flow" doc:id="7e25f7d6-718f-424d-8c85-14bb2c04f901" name="common-hubspot-request-flow" />
+        <logger level="INFO" doc:name="Log Completed" doc:id="ff453328-5084-47a8-a9d2-f87460af07d9" message="#[%dw 2.0&#xA;output application/json&#xA;---&#xA;{&#xA;  env : Mule::p('env'),&#xA;  transactionId : correlationId,&#xA;  applicationName : Mule::p('app.name'),&#xA;  flowName : &quot;deal deassociate flow&quot;,&#xA;  status: &quot;Completed&quot;,&#xA;  timestamp : now()&#xA;}]" />
+    </flow>
+    <flow name="get:\form\submissions\(formId):doit-hubspot-sapi-config">
+		<logger level="INFO" doc:name="Log Started" doc:id="6808f72f-1747-4838-939f-0438a54543ce" message="#[%dw 2.0&#10;output application/json&#10;---&#10;{&#10;  env : Mule::p('env'),&#10;  transactionId : correlationId,&#10;  applicationName : Mule::p('app.name'),&#10;  flowName : &quot;get Form-Submissions by formId flow&quot;,&#10;  status: &quot;Started&quot;,&#10;  timestamp : now()&#10;}]" />
+		<ee:transform doc:name="parameters" doc:id="4e31b309-5b23-431d-8cb6-6443f1aa19e9" >
 			<ee:message >
 				<ee:set-payload resource="dwl/common/msg-inbound-json-payload.dwl" />
 			</ee:message>
 			<ee:variables >
-				<ee:set-variable resource="dwl/var-deassociate-deal.dwl" variableName="parameters" />
+				<ee:set-variable variableName="formid" ><![CDATA[attributes.uriParams.'formId']]></ee:set-variable>
+				<ee:set-variable resource="dwl/var-form-submission-by-form-id.dwl" variableName="parameters" />
 			</ee:variables>
 		</ee:transform>
-		<flow-ref doc:name="Flow Ref to common hubspot request flow" doc:id="7e25f7d6-718f-424d-8c85-14bb2c04f901" name="common-hubspot-request-flow" />
-		<logger level="INFO" doc:name="Log Completed" doc:id="ff453328-5084-47a8-a9d2-f87460af07d9" message="#[%dw 2.0&#10;output application/json&#10;---&#10;{&#10;  env : Mule::p('env'),&#10;  transactionId : correlationId,&#10;  applicationName : Mule::p('app.name'),&#10;  flowName : &quot;deal deassociate flow&quot;,&#10;  status: &quot;Completed&quot;,&#10;  timestamp : now()&#10;}]" />
+		<flow-ref doc:name="Flow Ref to common hubspot request flow" doc:id="85b2746c-1dd3-4d5f-8c89-30002395eae4" name="common-hubspot-request-flow" />
+		<logger level="INFO" doc:name="Log Completed" doc:id="416bb142-1e65-4ef5-bd85-5f5b9cc7be60" message="#[%dw 2.0&#10;output application/json&#10;---&#10;{&#10;  env : Mule::p('env'),&#10;  transactionId : correlationId,&#10;  applicationName : Mule::p('app.name'),&#10;  flowName : &quot;get Form-Submissions by formId flow&quot;,&#10;  status: &quot;Completed&quot;,&#10;  timestamp : now()&#10;}]" />
     </flow>
 </mule>

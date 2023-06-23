@@ -180,6 +180,31 @@ traits:
             application/json:
               example:
 
+  /recentmodified:
+    get:
+      is: [errorResponse]
+      description: 
+      displayName: 
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+
+  /aggregated:
+    post:
+      is: [errorResponse]
+      description: get aggregated company by companyId
+      displayName: Get companies
+      body:
+        application/json:
+          type: array
+          example: [123,345]
+      responses:
+        200:
+          body:
+            application/json:
+              example:
   /domain:
     post:
       is: [errorResponse]
@@ -238,5 +263,32 @@ traits:
           body:
             application/json:
               example:
+  /associate:
+    put:
+      is: [errorResponse]
+      description: Associate a new Deal with Contact
+      displayName: Associate a new Deal with Contact
+      body:
+        application/json:
+          example:
+      responses:
+        200:
+          body:
+            application/json:
+              example:
+  /deassociate:
+    put:
+      is: [errorResponse]
+      description: Deassociate a new Deal with Contact
+      displayName: Deassociate a new Deal with Contact
+      body:
+        application/json:
+          example:
+      responses:
+        200:
+          body:
+            application/json:
+              example:              
+
                   
         

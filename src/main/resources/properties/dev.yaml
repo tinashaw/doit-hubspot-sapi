@@ -23,10 +23,14 @@ url:
     create: "https://api.hubapi.com/contacts/v1/contact"
     update: "https://api.hubapi.com/contacts/v1/contact/vid/"
   company:
+    recentmodified: "https://api.hubapi.com/companies/v2/companies/recent/modified"
     by-id: "https://api.hubapi.com/companies/v2/companies/"
     by-domain: "https://api.hubapi.com/companies/v2/domains/"
     create: "https://api.hubapi.com/companies/v2/companies"
     update: "https://api.hubapi.com/companies/v2/companies/"
+  deal:
+    associate : "https://api.hubapi.com/crm-associations/v1/associations"
+    deassociate: "https://api.hubapi.com/crm-associations/v1/associations/delete"  
   owner:
     by-id: "http://api.hubapi.com/owners/v2/owners/" 
     byemail: "http://api.hubapi.com/owners/v2/owners?email="

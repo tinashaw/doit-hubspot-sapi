@@ -6,8 +6,8 @@
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd
 http://www.mulesoft.org/schema/mule/secure-properties http://www.mulesoft.org/schema/mule/secure-properties/current/mule-secure-properties.xsd">
-	<flow name="common-hubspot-requestFlow" doc:id="a94e4de9-81b6-4103-855a-3a65e85a5d76" >
-		<http:request method="#[vars.parameters.method]" doc:name="Request to hubspot" doc:id="be4ec2d0-8e34-4c73-8b53-30ded842db01" url="#[vars.parameters.url]">
+	<flow name="common-hubspot-request-flow" doc:id="a94e4de9-81b6-4103-855a-3a65e85a5d76" >
+		<http:request method="#[vars.parameters.method]" doc:name="Request to hubspot" doc:id="be4ec2d0-8e34-4c73-8b53-30ded842db01" url="#[vars.parameters.url]" sendCorrelationId="ALWAYS">
 			<http:headers ><![CDATA[#[output application/java
 ---
 {
@@ -16,24 +16,14 @@ http://www.mulesoft.org/schema/mule/secure-properties http://www.mulesoft.org/sc
 		</http:request>
 		<ee:transform doc:name="Set Response Payload" doc:id="d459c244-3114-40c6-9d7c-d9195ab3c9fb" >
 			<ee:message >
-				<ee:set-payload ><![CDATA[%dw 2.0
-output application/json
----
-payload]]></ee:set-payload>
+				<ee:set-payload resource="dwl/common/msg-response-json-payload.dwl" />
 			</ee:message>
 		</ee:transform>
 		<error-handler >
-<!-- [STUDIO:"On Error Continue"]			<on-error-continue enableNotifications="false" logException="false" doc:name="On Error Continue" doc:id="645ad388-254e-456d-8437-226422d5e9b7" type="HTTP:NOT_FOUND">
-				<set-payload value="#[payload]" doc:name="Set Payload" doc:id="07f042fb-f2c5-44e8-a3cd-9d8d3acdb95d" />
-				<logger level="INFO" doc:name="Logger" doc:id="403420ec-894c-44c6-bd1a-e6745d2adf8f" />
-			</on-error-continue> [STUDIO] -->
-			<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate" doc:id="45bf8db1-e462-44b5-bb74-74ac0c128452" >
+			<on-error-propagate enableNotifications="true" logException="true" doc:name="On Error Propagate - ANY" doc:id="45bf8db1-e462-44b5-bb74-74ac0c128452" type="ANY">
 				<ee:transform doc:name="Set Error message" doc:id="8d9addae-4a61-4f16-92e9-2bb963bdf0a7" >
 					<ee:message >
-						<ee:set-payload ><![CDATA[%dw 2.0
-output application/json
----
-error.muleMessage.payload]]></ee:set-payload>
+						<ee:set-payload resource="dwl/common/msg-set-error-message.dwl" />
 					</ee:message>
 				</ee:transform>
 			</on-error-propagate>

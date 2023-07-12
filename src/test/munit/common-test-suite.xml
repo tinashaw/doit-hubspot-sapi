@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="common-test-suite.xml" />
+	<munit:test name="common-test-suite-common-hubspot-request-flow-test" doc:id="4e9ca6ae-66cd-40df-bce0-c49c6e4c89d6" description="Test">
+		<munit:behavior >
+			<munit-tools:mock-when doc:name="Mock Request to hubspot" doc:id="ca8b47e3-2101-4af7-ae11-c0d66c85037f" processor="http:request">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="Request to hubspot" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="be4ec2d0-8e34-4c73-8b53-30ded842db01" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="Request to hubspot" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="be4ec2d0-8e34-4c73-8b53-30ded842db01" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+			</munit-tools:mock-when>
+		</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to common-hubspot-request-flow" doc:id="8d930639-6890-47d7-9712-f8f216c17dd3" name="common-hubspot-request-flow"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:verify-call doc:name="Verify call" doc:id="56124e45-6e76-470d-8055-001f9fa32f72" processor="ee:transform">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="Set Response Payload" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="d459c244-3114-40c6-9d7c-d9195ab3c9fb" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+			</munit-tools:verify-call>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="common-test-suite-common-hubspot-request-flow-test-error" doc:id="5dfeafed-84cf-4b5e-acd7-0c5f6ca35c79" description="Test" expectedErrorType="ANY">
+		<munit:behavior >
+			<munit-tools:mock-when doc:name="Mock Request to hubspot" doc:id="4c2f209e-9b18-4ddd-9b62-9af52070b8f4" processor="http:request" >
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="Request to hubspot" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="be4ec2d0-8e34-4c73-8b53-30ded842db01" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="Request to hubspot" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="be4ec2d0-8e34-4c73-8b53-30ded842db01" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+				<munit-tools:then-return >
+					<munit-tools:error typeId="ANY" />
+				</munit-tools:then-return>
+			</munit-tools:mock-when>
+		</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to common-hubspot-request-flow" doc:id="556776dd-5c3b-4bab-bbae-18a6d386919d" name="common-hubspot-request-flow"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:verify-call doc:name="Verify call" doc:id="9d139a59-a215-4f00-88af-02fc95e4c078" processor="ee:transform">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="Set Error message" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="8d9addae-4a61-4f16-92e9-2bb963bdf0a7" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+			</munit-tools:verify-call>
+		</munit:validation>
+	</munit:test>
+
+
+</mule>

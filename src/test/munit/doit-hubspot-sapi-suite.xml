@@ -1,0 +1,520 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="doit-hubspot-sapi-suite.xml" />
+	<munit:test name="get:\owner\email:doit-hubspot-sapi-config-test" doc:id="0a4a866c-c2af-448a-b92f-2d3cb02e99ae" >
+		<munit:behavior >
+			<munit-tools:mock-when doc:name="Mock Flow Ref to common hubspot request flow" doc:id="6a3ac55e-66ea-4a54-864a-f1fa072ebb3f" processor="flow-ref">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="382ce5bf-ac42-44c5-ac34-14bb89ea6518" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+			</munit-tools:mock-when>
+			<munit:set-event doc:name="Set Input" doc:id="f282a349-3282-43c2-99b8-dee8f00d2f46" >
+				<munit:attributes value="#[readUrl('classpath://doithubspotattributes\get-owner-by-email-attributes.dwl')]" />
+			</munit:set-event>
+		</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to get:\owner\email:doit-hubspot-sapi-config" doc:id="9342b3d2-9a41-49aa-8fc8-31f7e9bc49e5" name="get:\owner\email:doit-hubspot-sapi-config"/>
+		</munit:execution>
+		<munit:validation>
+			<munit-tools:verify-call doc:name="Verify call" doc:id="96a3c7d3-d0b5-4669-ae80-0c74302399fb" processor="logger">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="0e69961e-57a9-418b-b53e-18a1a85fc5be" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+			</munit-tools:verify-call>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="doit-hubspot-sapi-suite-get:\owner\id:doit-hubspot-sapi-configTest" doc:id="26b49c0e-f33b-4a79-a8d9-57a9f153a44d" description="Test">
+		<munit:behavior >
+			<munit-tools:mock-when doc:name="Mock Flow Ref to common hubspot request flow" doc:id="bbc1de8c-a40b-4a8b-8e31-87a58e895749" processor="flow-ref">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="0351d605-0401-4d66-9c9c-15e80237ee19" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="common-hubspot-request-flow" attributeName="name" />
+				</munit-tools:with-attributes>
+			</munit-tools:mock-when>
+			<munit:set-event doc:name="Set Input" doc:id="16f9e64d-3645-4cda-a182-371ba4377ee9" >
+				<munit:attributes value="#[readUrl('classpath://doithubspotattributes\get-owner-by-id-attributes.dwl')]" />
+			</munit:set-event>
+		</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to get:\owner\id:doit-hubspot-sapi-config" doc:id="c7a4f798-e35a-440f-9d78-278dda7e8f30" name="get:\owner\id:doit-hubspot-sapi-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:verify-call doc:name="Verify call Log Completed" doc:id="639a1d6f-5485-4f07-af28-567f7af9502c" processor="logger">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="ecf1ad6d-28a6-4446-b223-5feab192b82a" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+			</munit-tools:verify-call>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="doit-hubspot-sapi-suite-get:\contact\recentmodified:doit-hubspot-sapi-configTest" doc:id="dd708c02-1af3-4127-a8ef-d6087c8fa671" description="Test">
+		<munit:behavior >
+			<munit-tools:mock-when doc:name="Mock Flow Ref to common hubspot request flow" doc:id="b9754f40-a374-4956-b49b-bdfc8e465233" processor="flow-ref">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="02832c02-f196-460a-b88a-a7ba3416501e" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="common-hubspot-request-flow" attributeName="name" />
+				</munit-tools:with-attributes>
+			</munit-tools:mock-when>
+			<munit:set-event doc:name="Set Input" doc:id="413adbd5-eccd-49e9-bd0b-34e250a5b6d4" >
+				<munit:attributes value="#[readUrl('classpath://doithubspotattributes\contact-recentmodified-attributes.dwl')]" />
+			</munit:set-event>
+		
+</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to get:\contact\recentmodified:doit-hubspot-sapi-config" doc:id="d52cde6d-97ef-4a2a-b502-348a7f3a3572" name="get:\contact\recentmodified:doit-hubspot-sapi-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:verify-call doc:name="Verify call Log Completed" doc:id="77e542fc-7913-4cca-9898-9d828c6cbecd" processor="logger">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="433de3a3-ab68-47e1-a450-5ca5d2d49ac8" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="433de3a3-ab68-47e1-a450-5ca5d2d49ac8" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+			</munit-tools:verify-call>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="doit-hubspot-sapi-suite-get:\company\(companyid):doit-hubspot-sapi-configTest" doc:id="22122a31-fa46-4144-925d-081d153cbaa3" description="Test">
+		<munit:behavior >
+			<munit-tools:mock-when doc:name="Mock Flow Ref to common hubspot request flow" doc:id="28d742d5-cea1-4a58-b622-7438733d50f7" processor="flow-ref">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="21c7ce1d-c9d3-4fa1-9656-20092feae5d6" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="common-hubspot-request-flow" attributeName="name" />
+				</munit-tools:with-attributes>
+			</munit-tools:mock-when>
+			<munit:set-event doc:name="Set Input" doc:id="b63beca5-9106-4ffc-8616-b6b26f71029e" >
+				<munit:attributes value="#[readUrl('classpath://doithubspotattributes\company-by-companyid-attributes.dwl')]" />
+			</munit:set-event>
+		
+</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to get:\company\(companyid):doit-hubspot-sapi-config" doc:id="eab047bf-f8a1-40c0-b819-3e2d8e426453" name="get:\company\(companyid):doit-hubspot-sapi-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:verify-call doc:name="Verify call Log Completed" doc:id="5b4f0303-8e8a-4029-b3f5-d8be2cdf5b76" processor="logger">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="6a6e1018-738d-47d9-a7ee-e71b402df98e" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="6a6e1018-738d-47d9-a7ee-e71b402df98e" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+			</munit-tools:verify-call>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="doit-hubspot-sapi-suite-get:\contact\(vid):doit-hubspot-sapi-configTest" doc:id="8d80cda7-ca25-4471-bc1a-ca1b1ffc36c9" description="Test">
+		<munit:behavior >
+			<munit-tools:mock-when doc:name="Mock Flow Ref to common hubspot request flow" doc:id="8904f658-9a07-44bd-a902-e8933bc3456c" processor="flow-ref">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="baf4ace3-758e-415b-98c5-45844760ae8c" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="common-hubspot-request-flow" attributeName="name" />
+					<munit-tools:with-attribute whereValue="baf4ace3-758e-415b-98c5-45844760ae8c" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="common-hubspot-request-flow" attributeName="name" />
+				</munit-tools:with-attributes>
+			</munit-tools:mock-when>
+			<munit:set-event doc:name="Set Input" doc:id="f4a48c0f-633b-446e-a1f2-30a5c710f52a" >
+				<munit:attributes value="#[readUrl('classpath://doithubspotattributes\contact-by-vid-attributes.dwl')]" />
+			</munit:set-event>
+		
+</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to get:\contact\(vid):doit-hubspot-sapi-config" doc:id="2593fb51-3d68-46c7-8a00-6d5924f2b9c1" name="get:\contact\(vid):doit-hubspot-sapi-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:verify-call doc:name="Verify call Log Completed" doc:id="a3f2d3af-7bce-4443-bcca-2f9265edc00c" processor="logger">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="934315e7-91a0-4f16-af8a-38ae89ab682c" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="934315e7-91a0-4f16-af8a-38ae89ab682c" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+			</munit-tools:verify-call>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="doit-hubspot-sapi-suite-post:\deal\create:application\json:doit-hubspot-sapi-configTest" doc:id="f195a4d6-25df-4785-9df4-35f419688102" description="Test">
+		<munit:behavior >
+			<munit-tools:mock-when doc:name="Mock Flow Ref to common hubspot request flow" doc:id="dc1b506c-3ef9-4999-ad71-6d769e06adbf" processor="flow-ref">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="746320b5-020c-4e7d-ba5a-5a3bab52968a" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="common-hubspot-request-flow" attributeName="name" />
+					<munit-tools:with-attribute whereValue="746320b5-020c-4e7d-ba5a-5a3bab52968a" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="common-hubspot-request-flow" attributeName="name" />
+				</munit-tools:with-attributes>
+			</munit-tools:mock-when>
+		
+</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to post:\deal\create:application\json:doit-hubspot-sapi-config" doc:id="7306e9da-e76c-4636-9ecc-b0b0bb1658d4" name="post:\deal\create:application\json:doit-hubspot-sapi-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:verify-call doc:name="Verify call Log Completed" doc:id="0acf7a4a-807d-412a-8392-2b27f408c9c8" processor="logger">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="8cc4685d-1ec5-493c-af50-f83f058ad10f" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="8cc4685d-1ec5-493c-af50-f83f058ad10f" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+			</munit-tools:verify-call>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="doit-hubspot-sapi-suite-post:\contact\create:application\json:doit-hubspot-sapi-configTest" doc:id="a34d1124-5f0a-4914-bdd6-afc29355f721" description="Test">
+		<munit:behavior >
+			<munit-tools:mock-when doc:name="Mock Flow Ref to common hubspot request flow" doc:id="e9b6654c-9ab1-4c1a-8b6d-1436a5488186" processor="flow-ref">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="02b13ad9-93f2-45b0-9b0e-71f9df78de2a" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="common-hubspot-request-flow" attributeName="name" />
+					<munit-tools:with-attribute whereValue="02b13ad9-93f2-45b0-9b0e-71f9df78de2a" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="common-hubspot-request-flow" attributeName="name" />
+				</munit-tools:with-attributes>
+			</munit-tools:mock-when>
+		
+</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to post:\contact\create:application\json:doit-hubspot-sapi-config" doc:id="d057ea81-cbcf-4c98-bdd0-6253e37bd4af" name="post:\contact\create:application\json:doit-hubspot-sapi-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:verify-call doc:name="Verify call Log Completed" doc:id="e8410276-b8a7-4468-beb6-c964a1d329f3" processor="logger">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="eb47d2cb-2371-4aa3-ad5a-8f73a6c8851c" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="eb47d2cb-2371-4aa3-ad5a-8f73a6c8851c" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+			</munit-tools:verify-call>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="doit-hubspot-sapi-suite-post:\company\create:application\json:doit-hubspot-sapi-configTest" doc:id="dc54f169-55ad-4a19-8d00-e795599aec80" description="Test">
+		<munit:behavior >
+			<munit-tools:mock-when doc:name="Mock Flow Ref to common hubspot request flow" doc:id="d1250d03-5b30-4723-8a1e-41995ba40a4f" processor="flow-ref">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="bb4a4307-1cca-447e-a807-6c65e2cc7188" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="common-hubspot-request-flow" attributeName="name" />
+				</munit-tools:with-attributes>
+			</munit-tools:mock-when>
+		
+</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to post:\company\create:application\json:doit-hubspot-sapi-config" doc:id="9ef9aefd-0cf7-48e9-97e6-8c8ffdf20c59" name="post:\company\create:application\json:doit-hubspot-sapi-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:verify-call doc:name="Verify call Log Completed" doc:id="14a9007a-5fc5-4f9d-a90b-b6cdb09ea994" processor="logger">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="173718ab-2cb1-4824-b4ad-f20cef989bd1" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="173718ab-2cb1-4824-b4ad-f20cef989bd1" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+			</munit-tools:verify-call>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="doit-hubspot-sapi-suite-post:\contact\update:application\json:doit-hubspot-sapi-configTest" doc:id="355f07a4-1811-4b01-8067-d0ffa7e0dd61" description="Test">
+		<munit:behavior >
+			<munit-tools:mock-when doc:name="Mock Flow Ref to common hubspot request flow" doc:id="51754310-554a-4ba0-816f-6a401c36c297" processor="flow-ref">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="8f662eba-0475-4ece-8958-08d5469cd265" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="common-hubspot-request-flow" attributeName="name" />
+				</munit-tools:with-attributes>
+			</munit-tools:mock-when>
+			<munit:set-event doc:name="Set Input" doc:id="548a4f7b-7f24-4335-81ae-3f06ba271fd2" >
+				<munit:attributes value="#[readUrl('classpath://doithubspotattributes\contact-update-attributes.dwl')]" />
+			</munit:set-event>
+		
+</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to post:\contact\update:application\json:doit-hubspot-sapi-config" doc:id="ba522250-7c29-4884-b8da-9e3c340eb900" name="post:\contact\update:application\json:doit-hubspot-sapi-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:verify-call doc:name="Verify call Log Completed" doc:id="f81887f1-7584-4705-ab26-daf32b260262" processor="logger">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="b5f21c17-dfab-40b4-8421-e192df160066" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="b5f21c17-dfab-40b4-8421-e192df160066" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+			</munit-tools:verify-call>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="doit-hubspot-sapi-suite-post:\company\update:application\json:doit-hubspot-sapi-configTest" doc:id="1917f4ff-4b69-4eb3-a5ca-6276371dcb25" description="Test">
+		<munit:behavior >
+			<munit-tools:mock-when doc:name="Mock Flow Ref to common hubspot request flow" doc:id="c6eae823-e557-4a82-8d11-05911dcf53bf" processor="flow-ref">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="279a94b8-e4f5-409f-ae71-3c09176bc74c" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="common-hubspot-request-flow" attributeName="name" />
+				</munit-tools:with-attributes>
+			</munit-tools:mock-when>
+			<munit:set-event doc:name="Set Input" doc:id="7524bb1e-2809-486b-affc-9283c618879d" >
+				<munit:attributes value="#[readUrl('classpath://doithubspotattributes\company-update-attributes.dwl')]" />
+			</munit:set-event>
+		
+</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to post:\company\update:application\json:doit-hubspot-sapi-config" doc:id="b4c28dc9-74da-4740-b472-97bde66ddf31" name="post:\company\update:application\json:doit-hubspot-sapi-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:verify-call doc:name="Verify call Log Completed" doc:id="35f9eb32-d838-491e-8d5f-221bb7f646f5" processor="logger">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="006a266d-8edf-4eb8-a9f7-a8b6b457466a" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="006a266d-8edf-4eb8-a9f7-a8b6b457466a" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+			</munit-tools:verify-call>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="doit-hubspot-sapi-suite-get:\contact\email\(email):doit-hubspot-sapi-configTest" doc:id="9f92e19b-4796-447b-ae1f-372972a77bbc" description="Test">
+		<munit:behavior >
+			<munit-tools:mock-when doc:name="Mock Flow Ref to common hubspot request flow" doc:id="09754a1a-0438-4ad8-b60f-655bc56b4d45" processor="flow-ref">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="Flow Ref to common hubspot request flow" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="48aaacd7-7102-4c6b-a9b1-31f0bc960b7b" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="common-hubspot-request-flow" attributeName="name" />
+				</munit-tools:with-attributes>
+			</munit-tools:mock-when>
+			<munit:set-event doc:name="Set Input" doc:id="9e8510ea-08d4-4683-85a7-20800413ec23" >
+				<munit:attributes value="#[readUrl('classpath://doithubspotattributes\contact-by-email-attributes.dwl')]" />
+			</munit:set-event>
+		
+</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to get:\contact\email\(email):doit-hubspot-sapi-config" doc:id="6b79c418-f4d3-4976-aa21-8ea6560ceb03" name="get:\contact\email\(email):doit-hubspot-sapi-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:verify-call doc:name="Verify call Log Completed" doc:id="df3215cf-ba7b-4aac-beb2-0ae0bb1bb20a" processor="logger">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="a5104cc0-1f99-4e99-9dfd-cc962eb5a6f4" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="a5104cc0-1f99-4e99-9dfd-cc962eb5a6f4" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+			</munit-tools:verify-call>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="doit-hubspot-sapi-suite-put:\deal\update\(dealId):application\json:doit-hubspot-sapi-configTest" doc:id="7aad21dc-b8b6-4226-8403-684c524957ad" description="Test">
+		<munit:behavior >
+			<munit-tools:mock-when doc:name="Mock Flow Ref to common hubspot request flow" doc:id="24756c5e-c7fa-477b-8b68-2f29b6a28b2d" processor="flow-ref">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="90bb7bea-fd16-44d9-bff7-f30622098fb1" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="common-hubspot-request-flow" attributeName="name" />
+				</munit-tools:with-attributes>
+			</munit-tools:mock-when>
+			<munit:set-event doc:name="Set Input" doc:id="86e5b549-04cd-4f65-a460-88945fc3baae" >
+				<munit:attributes value="#[readUrl('classpath://doithubspotattributes\deal-update-attributes.dwl')]" />
+			</munit:set-event>
+		
+</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to put:\deal\update\(dealId):application\json:doit-hubspot-sapi-config" doc:id="637e5ef3-a258-43ba-8176-bdfe3611b1d4" name="put:\deal\update\(dealId):application\json:doit-hubspot-sapi-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:verify-call doc:name="Verify call Log Completed" doc:id="84c64af7-d2f2-4e5f-a22b-173639170d93" processor="logger">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="d5d89247-0b8e-43ce-9978-8f12d298b034" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="d5d89247-0b8e-43ce-9978-8f12d298b034" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+			</munit-tools:verify-call>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="doit-hubspot-sapi-suite-post:\company\domain:application\json:doit-hubspot-sapi-configTest" doc:id="2ddec5a3-d5ff-45c8-91d0-6f81ea7f4ed8" description="Test">
+		<munit:behavior >
+			<munit-tools:mock-when doc:name="Mock Flow Ref to common hubspot request flow" doc:id="30075271-4001-441a-bc24-87a087dacb31" processor="flow-ref">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="fe9ee9f5-9fcb-480d-9744-f961ccbfc641" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="common-hubspot-request-flow" attributeName="name" />
+					<munit-tools:with-attribute whereValue="fe9ee9f5-9fcb-480d-9744-f961ccbfc641" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="common-hubspot-request-flow" attributeName="name" />
+				</munit-tools:with-attributes>
+			</munit-tools:mock-when>
+			<munit:set-event doc:name="Set Input" doc:id="dd37a7a6-c85f-4f6c-92c8-2adc8c1e39d8" >
+				<munit:attributes value="#[readUrl('classpath://doithubspotattributes\company-by-domain-attributes.dwl')]" />
+			</munit:set-event>
+		
+</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to post:\company\domain:application\json:doit-hubspot-sapi-config" doc:id="587ec1bb-87ca-4dce-8455-ceb5943d6d28" name="post:\company\domain:application\json:doit-hubspot-sapi-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:verify-call doc:name="Verify call Log Completed" doc:id="f2d9e1e5-748f-4e03-be26-95a29f9eb5ea" processor="logger">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="65912086-8396-4ffb-988c-67d9b486c14a" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="65912086-8396-4ffb-988c-67d9b486c14a" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+			</munit-tools:verify-call>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="doit-hubspot-sapi-suite-post:\contact\aggregated:application\json:doit-hubspot-sapi-configTest" doc:id="de26a92b-cabf-47c1-ba7f-d2da231a1808" description="Test">
+		<munit:behavior >
+			<munit-tools:mock-when doc:name="Mock Flow Ref to common hubspot request flow" doc:id="7b50085e-f73b-45d1-a208-56ef9801aec7" processor="flow-ref">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="8c6a5d32-d489-4c4d-881f-c18547ead7ed" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="common-hubspot-request-flow" attributeName="name" />
+					<munit-tools:with-attribute whereValue="8c6a5d32-d489-4c4d-881f-c18547ead7ed" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="common-hubspot-request-flow" attributeName="name" />
+				</munit-tools:with-attributes>
+			</munit-tools:mock-when>
+			<munit:set-event doc:name="Set Event" doc:id="921d2d2c-4880-4965-8460-a5fac5e7403e" >
+				<munit:payload value='#[%dw 2.0&#10;output application/json&#10;---&#10;["1234"]]' encoding="UTF-8" mediaType="application/json" />
+			</munit:set-event>
+		
+</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to post:\contact\aggregated:application\json:doit-hubspot-sapi-config" doc:id="31bdd87c-7011-422a-8ea4-575835844ab0" name="post:\contact\aggregated:application\json:doit-hubspot-sapi-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:verify-call doc:name="Verify call Log Completed" doc:id="64f976c3-c25b-478b-bc6b-a3caaf934339" processor="logger">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="ef57236b-1322-40bf-bb59-64f91eaeec87" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="ef57236b-1322-40bf-bb59-64f91eaeec87" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+			</munit-tools:verify-call>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="doit-hubspot-sapi-suite-get:\company\recentmodified:doit-hubspot-sapi-configTest" doc:id="de68e646-07b5-4c52-912d-9532e9558d8d" description="Test">
+		<munit:behavior >
+			<munit-tools:mock-when doc:name="Mock Flow Ref to common hubspot request flow" doc:id="8411396d-6a69-45ef-b623-bbae04c3b1b9" processor="flow-ref">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="8a4b29c1-2f76-4cc7-a851-b0a445d17e0b" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="common-hubspot-request-flow" attributeName="name" />
+				</munit-tools:with-attributes>
+			</munit-tools:mock-when>
+			<munit:set-event doc:name="Set Input" doc:id="8a935904-1b15-424a-b9e9-9515281e7fde" >
+				<munit:attributes value="#[readUrl('classpath://doithubspotattributes\company-recentmodified-attributes.dwl')]" />
+			</munit:set-event>
+		
+</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to get:\company\recentmodified:doit-hubspot-sapi-config" doc:id="2c40d569-75a2-4d4f-a982-ae02160c3958" name="get:\company\recentmodified:doit-hubspot-sapi-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:verify-call doc:name="Verify call Log Completed" doc:id="8fea535b-f3bc-4f2f-ab22-3ecd648ea76c" processor="logger">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="bb70b2da-db7a-4e16-bde8-e1e011549d9a" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="bb70b2da-db7a-4e16-bde8-e1e011549d9a" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+			</munit-tools:verify-call>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="doit-hubspot-sapi-suite-post:\company\aggregated:application\json:doit-hubspot-sapi-configTest" doc:id="3d4c4be7-6c9d-42ee-8b11-3909255a775c" description="Test">
+		<munit:behavior >
+			<munit-tools:mock-when doc:name="Mock Flow Ref to common hubspot request flow" doc:id="686466dc-77fd-4fba-916a-3fed95273fc1" processor="flow-ref">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="812a8cfb-7d8d-43f6-83e2-2c049910c50c" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="common-hubspot-request-flow" attributeName="name" />
+					<munit-tools:with-attribute whereValue="812a8cfb-7d8d-43f6-83e2-2c049910c50c" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="common-hubspot-request-flow" attributeName="name" />
+				</munit-tools:with-attributes>
+			</munit-tools:mock-when>
+			<munit:set-event doc:name="Set Event" doc:id="8d394254-4e1e-456b-8613-3aaee9ac9d87" >
+				<munit:payload value='#[%dw 2.0&#10;output application/json&#10;--- &#10;["1234"]]' encoding="UTF-8" mediaType="application/json" />
+			</munit:set-event>
+		
+</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to post:\company\aggregated:application\json:doit-hubspot-sapi-config" doc:id="433a74c2-8c05-4a82-9da6-d4300194aec9" name="post:\company\aggregated:application\json:doit-hubspot-sapi-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:verify-call doc:name="Verify call Log Completed" doc:id="bd06a682-cf1d-490e-8497-277e3a49445a" processor="logger">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="2c3acc45-8c90-49de-ab92-6fe9708f1f2b" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+			</munit-tools:verify-call>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="doit-hubspot-sapi-suite-put:\deal\associate:application\json:doit-hubspot-sapi-configTest" doc:id="ae1f40f9-1c28-4c07-b821-cc593de5cdcf" description="Test">
+		<munit:behavior >
+			<munit-tools:mock-when doc:name="Mock Flow Ref to common hubspot request flow" doc:id="f3a3a925-5ceb-4f44-8a3d-2bbbfe224cfd" processor="flow-ref">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="7b1e2c65-47a6-4fda-a4f0-e8fa64c998d7" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="common-hubspot-request-flow" attributeName="name" />
+					<munit-tools:with-attribute whereValue="7b1e2c65-47a6-4fda-a4f0-e8fa64c998d7" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="common-hubspot-request-flow" attributeName="name" />
+				</munit-tools:with-attributes>
+			</munit-tools:mock-when>
+		
+</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to put:\deal\associate:application\json:doit-hubspot-sapi-config" doc:id="6d06998d-76c7-46fe-b319-3faf8c784d36" name="put:\deal\associate:application\json:doit-hubspot-sapi-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:verify-call doc:name="Verify call Log Completed" doc:id="3b9216db-d6c2-4a4c-a5a9-0d3ea86aa862" processor="logger">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="628ee356-37a8-4749-9dc4-b53a89c24d56" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="628ee356-37a8-4749-9dc4-b53a89c24d56" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+			</munit-tools:verify-call>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="doit-hubspot-sapi-suite-put:\deal\deassociate:application\json:doit-hubspot-sapi-configTest" doc:id="a496cda0-29f4-48c2-a042-37d54477736d" description="Test">
+		<munit:behavior >
+			<munit-tools:mock-when doc:name="Mock Flow Ref to common hubspot request flow" doc:id="ca0d827f-f6c4-4047-bfc4-cb78dea848d0" processor="flow-ref">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="7e25f7d6-718f-424d-8c85-14bb2c04f901" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="common-hubspot-request-flow" attributeName="name" />
+					<munit-tools:with-attribute whereValue="7e25f7d6-718f-424d-8c85-14bb2c04f901" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="common-hubspot-request-flow" attributeName="name" />
+				</munit-tools:with-attributes>
+			</munit-tools:mock-when>
+		
+</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to put:\deal\deassociate:application\json:doit-hubspot-sapi-config" doc:id="4310750b-4ffb-467e-9040-1478fc87a252" name="put:\deal\deassociate:application\json:doit-hubspot-sapi-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:verify-call doc:name="Verify call Log Completed" doc:id="d1688b2e-635a-4cff-9616-ba1f09ad6a01" processor="logger">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="ff453328-5084-47a8-a9d2-f87460af07d9" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="ff453328-5084-47a8-a9d2-f87460af07d9" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+			</munit-tools:verify-call>
+		</munit:validation>
+	</munit:test>
+	<munit:test name="doit-hubspot-sapi-suite-get:\form\submissions\(formId):doit-hubspot-sapi-configTest" doc:id="f5960401-cc4e-4eb0-b2a0-fb240ca239c2" description="Test">
+		<munit:behavior >
+			<munit-tools:mock-when doc:name="Mock Flow Ref to common hubspot request flow" doc:id="a9ef817a-e47d-43b2-9cbe-4b124de690d6" processor="flow-ref">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="85b2746c-1dd3-4d5f-8c89-30002395eae4" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="common-hubspot-request-flow" attributeName="name" />
+					<munit-tools:with-attribute whereValue="85b2746c-1dd3-4d5f-8c89-30002395eae4" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="common-hubspot-request-flow" attributeName="name" />
+				</munit-tools:with-attributes>
+			</munit-tools:mock-when>
+			<munit:set-event doc:name="Set Input" doc:id="dfe7e732-8a9b-4f2d-881c-de50dbc9cddc" >
+				<munit:attributes value="#[readUrl('classpath://doithubspotattributes\submissions-forms-attributes.dwl')]" />
+			</munit:set-event>
+		
+</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="Flow-ref to get:\form\submissions\(formId):doit-hubspot-sapi-config" doc:id="54aa643a-b45d-4ae7-9071-41434db0262b" name="get:\form\submissions\(formId):doit-hubspot-sapi-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:verify-call doc:name="Verify call Log Completed" doc:id="527d9472-0b5c-401a-93d9-720c45d0a2d8" processor="logger">
+				<munit-tools:with-attributes >
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="416bb142-1e65-4ef5-bd85-5f5b9cc7be60" attributeName="doc:id" />
+					<munit-tools:with-attribute whereValue="Log Completed" attributeName="doc:name" />
+					<munit-tools:with-attribute whereValue="416bb142-1e65-4ef5-bd85-5f5b9cc7be60" attributeName="doc:id" />
+				</munit-tools:with-attributes>
+			</munit-tools:verify-call>
+		</munit:validation>
+	</munit:test>
+
+</mule>
